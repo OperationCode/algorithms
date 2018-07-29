@@ -44,6 +44,10 @@ Prerequisites:
 
 ## How it works
 
+### Schedule
+
+In #algorithms-curriculum channel in [Operation Code Slack](https://operationcode.org), we will solve and discuss one exercise a week. The curriculum will reset and restart after solving every exercise. The exercises will be in increasing difficulty, and though you can jump in and out, be aware that some are built on top of previously built data structures.
+
 ### Folders
 
 This repository contains two key folders: `/src` and `/solutions`.
