@@ -11,5 +11,7 @@ export default class Queue {
 
   dequeue() {}
 
-  toString() {}
+  toString() {
+    return this.store.toString();
+  }
 }

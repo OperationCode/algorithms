@@ -16,7 +16,7 @@ export default class Queue {
   }
 
   enqueue(value) {
-    return this.store.push(value);
+    return this.store.unshift(value);
   }
 
   dequeue() {
@@ -24,7 +24,7 @@ export default class Queue {
       return null;
     }
 
-    return this.store.shift();
+    return this.store.pop();
   }
 
   toString() {
