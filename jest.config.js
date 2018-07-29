@@ -4,7 +4,7 @@ module.exports = {
   bail: false,
 
   // Indicates whether each individual test should be reported during the run.
-  verbose: false,
+  verbose: true,
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: false,
@@ -13,7 +13,7 @@ module.exports = {
   coverageDirectory: './coverage/',
 
   // If the test path matches any of the patterns, it will be skipped.
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '/solutions', '/skeleton'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '/solutions'],
 
   // If the file path matches any of the patterns, coverage information will be skipped.
   coveragePathIgnorePatterns: ['<rootDir>/node_modules/'],
