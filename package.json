@@ -1,0 +1,45 @@
+{
+  "name": "operation-code-algorithms",
+  "version": "0.0.1",
+  "description": "Operation Code Algorithms Curriculum",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trekhleb/javascript-algorithms.git"
+  },
+  "keywords": [
+    "operation-code",
+    "computer-science",
+    "cs",
+    "algorithms",
+    "data-structures",
+    "javascript",
+    "algorithm",
+    "javascript-algorithms",
+    "sorting-algorithms",
+    "graph",
+    "tree"
+  ],
+  "author": "Kevin K. Lee (https://www.linkedin.com/in/kevinkiklee/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevinkiklee/opcode-algorithms/issues"
+  },
+  "homepage": "https://github.com/kevinkiklee/opcode-algorithms#readme",
+  "devDependencies": {
+    "@types/jest": "^23.1.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0",
+    "jest": "^23.3.0"
+  }
+}
