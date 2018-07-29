@@ -6,10 +6,6 @@ What is algorithms? It is a set of instructions performed on some data. Differen
 
 The subject may seem intimidating at first, but it is all built on top of small key pieces over one another. This curriculum is designed to help you get started on those fundamental pieces. The problem sets contain key 6 data structures, 9 sorting/searching algorithms, and 3 mathematical exercises.
 
-> **Why study algorithms?**
->
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu eros eu dolor maximus consectetur sed eget tortor. In sit amet ligula erat. Proin ac porta ex, non vehicula augue. Cras et dolor at dui malesuada suscipit. Suspendisse potenti. Mauris dapibus lobortis eros eget hendrerit. Why not?
-
 Prerequisites:
 
 - Basic coding experience.
@@ -87,11 +83,8 @@ See how it reads like regular language? Understanding the test specifications wi
 ## How to Start
 
 - Fork this repo.
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 - Clone the repo to your computer.
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 - Run `npm run install` in the repo root.
-  - Make sure you have `node` installed. If not !!!INSTRUCTIONS!!!
 - Run `npm run watch` to run the tests in watch-mode.
   - Once `jest` is done initializing, press `p` to filter the tests.
   - Type in the name of your problem set, for example 'Queue'.
@@ -110,4 +103,4 @@ See how it reads like regular language? Understanding the test specifications wi
 
 ## Credit
 
-The tests have been imported from [JavaScript Algorithms](https://github.com/trekhleb/javascript-algorithms) by [Oleksii Trekhleb](https://github.com/trekhleb/).
+The tests have been imported from [JavaScript Algorithms](https://github.com/trekhleb/javascript-algorithms) by Oleksii Trekhleb
