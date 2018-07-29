@@ -1,4 +1,4 @@
-import BinaryTreeNode from '../../../../data-structures/tree/BinaryTreeNode';
+import BinaryTreeNode from '../../../../data-structures/binary-search-tree/BinaryTreeNode';
 import breadthFirstSearch from '../breadthFirstSearch';
 
 describe('breadthFirstSearch', () => {
