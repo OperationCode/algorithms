@@ -1,7 +1,7 @@
-import LinkedList from '../linked-list/LinkedList';
-
 export default class Queue {
-  constructor() {}
+  constructor() {
+    this.store = [];
+  }
 
   isEmpty() {}
 
@@ -11,7 +11,5 @@ export default class Queue {
 
   dequeue() {}
 
-  toString(callback) {
-    return this.linkedList.toString(callback);
-  }
+  toString() {}
 }
