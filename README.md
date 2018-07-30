@@ -2,9 +2,9 @@
 
 Welcome to OpCode's Algorithms curriculum!
 
-What is algorithms? It is a set of instructions performed on some data. Different ways of storing and manipulating data provides us easier, faster, or previously-thought impossible ways to solve real world problems. The algorithms utilizing these data structures (which are also written in algorithms), the humanity has achieved incredible advancements.
+What are algorithms? They a set of instructions performed on some data. They act as different ways of storing and manipulating data provides us easier, faster, or previously-thought impossible ways to solve real world problems.
 
-The subject may seem intimidating at first, but it is all built on top of small key pieces over one another. This curriculum is designed to help you get started on those fundamental pieces. The problem sets contain key 6 data structures, 9 sorting/searching algorithms, and 3 mathematical exercises.
+The subject may seem intimidating at first, but it is all built on top of small key pieces over one another. This curriculum is designed to help you get started on those fundamental pieces. While many resources exist online, many are filled with jargons and require extensive previous knowledge. This curriculum is geared towards beginners, and it provides the walkthroughs, test cases, and online help on Slack.
 
 Prerequisites:
 
@@ -14,6 +14,8 @@ Prerequisites:
 - Understanding of the Big O notation.
 
 ## Curriculum
+
+The problem sets below contain information on key data structures, sorting/searching algorithms, and various mathematical exercises.
 
 - **Data Structures**
   - [Queue](src/data-structures/queue)
@@ -52,8 +54,13 @@ This repository contains two key folders: `/src` and `/solutions`.
   - It is encouraged that you read the solutions after you solve the problem. It is okay to refer to certain parts of the solutions if you are truly stuck.
   - Do your best to go as far as you can, but do not feel discouraged if you don't finish it. Study the solutions, and make sure you truly understand the material. Then try the problem again.
   - Please **do not update** any files in this folder. As we improve the curriculum, this folder will be updated. If you change any files here, then you will have to deal with merge conflicts. =)
+- `/skeletons` contains the stripped version of problems.
+  - This folder will always mirror `/solutions` folder.
+  - You are free to copy the folder from here into `/src` folder and start solving them, however, be aware that we may update the files in `/src` and you may run into merge conflicts.
 - `/src` is where you will write your code.
-  - You are free to commit your work in this folder and upload them to GitHub.
+  - Contains the problem sets that are fully ready.
+  - Please do not update any files except the file for the problem itself.
+  - Please feel free to commit your code here and upload them to GitHub.
 
 ### Test-Driven Development
 
@@ -82,17 +89,24 @@ See how it reads like regular language? Understanding the test specifications wi
 
 ## How to Start
 
-- Fork this repo.
-- Clone the repo to your computer.
+- Fork and clone the repo to your computer.
+- Setup your upstream.
+  - In the terminal, enter the repo and run `git remote add upstream https://github.com/OperationCode/algorithms.git`
 - Run `npm run install` in the repo root.
 - Run `npm run watch` to run the tests in watch-mode.
   - Once `jest` is done initializing, press `p` to filter the tests.
   - Type in the name of your problem set, for example 'Queue'.
   - This will automatically re-run the Queue tests any time you save your changes.
 
+## How to Update
+
+- There will be times when the problem sets will be updated. In that case, we will announce in the channel for everyone to pull from `upstream`.
+- Enter the terminal, and run `git pull upstream master`.
+- If you have edited the `/solutions` or `/skeletons` folder, you may run into a merge conflict. At that point, please reach out to the channel on Slack.
+
 ## How to Contribute
 
-- We need mentors in #algorithms-curriculum channel.
+- We need mentors in #basic-algorithms channel.
   - Because the problem descriptions are poorly written at the moment, we will need to walk the students on Slack. Also, some may have deeper questions about the material, and we can all learn together by providing mentorship.
 - We need help writing a walkthrough for each problem set.
   - Currently, the problemss only provide a brief description. A detailed walkthrough is needed for the first several problems in order to help people adjust to the system.
