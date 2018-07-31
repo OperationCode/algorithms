@@ -7,7 +7,7 @@ export default class Queue {
 
   peek() {}
 
-  enqueue(value) {}
+  enqueue(el) {}
 
   dequeue() {}
 

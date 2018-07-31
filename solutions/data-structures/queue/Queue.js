@@ -15,8 +15,8 @@ export default class Queue {
     return this.store[0];
   }
 
-  enqueue(value) {
-    return this.store.unshift(value);
+  enqueue(el) {
+    return this.store.unshift(el);
   }
 
   dequeue() {

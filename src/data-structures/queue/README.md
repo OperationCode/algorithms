@@ -8,8 +8,8 @@ Queue implements FIFO through two operations; `enqueue` and `dequeue`, which can
 
 ![Queing operations](../../../assets/queue.png)
 
-- `enqueue` operation stores the item at the back of the line
-- `dequeue` operation retrieves the item from the front of the line
+- `enqueue` operation stores the item at the back of the queue.
+- `dequeue` operation retrieves the item from the front of the queue.
 
 (_In the diagram above, the right side is the front, and the left is the back. However, the same operations are applied even when the direction is reversed_)
 
@@ -21,8 +21,8 @@ In this exercise, implement the following functions for the `Queue` class
   - Write a method that returns `true` if the queue is currently empty.
 - `peek()`
   - Write a method that returns the element at the front of the queue.
-- `enqueue()`
-  - Write a method that stores an element into the queue.
+- `enqueue(el)`
+  - Write a method that stores an element(`el`) into the queue.
 - `dequeue()`
   - Write a method that retrieves an element from the queue.
 - `toString()`
@@ -36,25 +36,29 @@ In this exercise, implement the following functions for the `Queue` class
 
 ## Queue Exercises
 
-Solve this exercise after writing a queue.
+**Stack Queue**
 
-**Bracket Matching**
+(Solve this exercise after finishing the stack exercise).
 
-Write an algorithm to determine if all of the delimiters in an expression are matched and closed.
-
-- Delimiters are `(` `{` `[`
-  - Closed is `()` and `(()` would not be closed
-  - Matched is `{}`, and `{]` would not be matched.
-
+Implement a queue using stacks.  Instead of using an array as your store, use a stack:
 ```
-const bracketMatch = string => {
+const Stack = require('../stack/Stack');
 
+export default class Stack {
+  constructor() {
+    this.store = new Stack();
+  }
+
+  isEmpty() {}
+
+  peek() {}
+
+  push(value) {}
+
+  pop() {}
+
+  toString() {
+    return this.store.toString();
+  }
 }
-
-console.log(bracketMatch('{ac[bb]}') === true);
-console.log(bracketMatch('[dklf(df(kl))d]{}') === true);
-console.log(bracketMatch('{[[[]]]}') === true);
-console.log(bracketMatch('{3234[fd') === false);
-console.log(bracketMatch('{df][d}') === false);
-console.log(bracketMatch('([)]') === false);
 ```
