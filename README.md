@@ -18,33 +18,33 @@ Prerequisites:
 The problem sets below contain information on key data structures, sorting/searching algorithms, and various mathematical exercises.
 
 - **Data Structures**
-  - [Queue](src/data-structures/queue)
-  - [Stack](src/data-structures/stack)
-  - [Linked List](src/data-structures/linked-list)
-  - [Doubly Linked List](src/data-structures/doubly-linked-list)
-  - [Hash Table](src/data-structures/hash-table)
-  - [Binary Search Tree](src/data-structures/tree/binary-search-tree)
+  - [Queue](solutions/data-structures/queue)
+  - [Stack](solutions/data-structures/stack)
+  - [Linked List](solutions/data-structures/linked-list)
+  - [Doubly Linked List](solutions/data-structures/doubly-linked-list)
+  - [Hash Table](solutions/data-structures/hash-table)
+  - [Binary Search Tree](solutions/data-structures/tree/binary-search-tree)
 - **Sorting**
-  - [Bubble Sort](src/algorithms/sorting/bubble-sort)
-  - [Selection Sort](src/algorithms/sorting/selection-sort)
-  - [Insertion Sort](src/algorithms/sorting/insertion-sort)
-  - [Merge Sort](src/algorithms/sorting/merge-sort)
-  - [Quicksort](src/algorithms/sorting/quick-sort)
+  - [Bubble Sort](solutions/algorithms/sorting/bubble-sort)
+  - [Selection Sort](solutions/algorithms/sorting/selection-sort)
+  - [Insertion Sort](solutions/algorithms/sorting/insertion-sort)
+  - [Merge Sort](solutions/algorithms/sorting/merge-sort)
+  - [Quicksort](solutions/algorithms/sorting/quick-sort)
 - **Searches**
-  - [Linear Search](src/algorithms/search/linear-search)
-  - [Binary Search](src/algorithms/search/binary-search)
-  - [Depth-First Search](src/algorithms/tree/depth-first-search)
-  - [Breadth-First Search](src/algorithms/tree/breadth-first-search)
+  - [Linear Search](solutions/algorithms/search/linear-search)
+  - [Binary Search](solutions/algorithms/search/binary-search)
+  - [Depth-First Search](solutions/algorithms/tree/depth-first-search)
+  - [Breadth-First Search](solutions/algorithms/tree/breadth-first-search)
 - **Numbers**
-  - [Factorial](src/algorithms/numbers/factorial)
-  - [Fibonacci Number](src/algorithms/numbers/fibonacci)
-  - [Prime Number](src/algorithms/numbers/prime)
+  - [Factorial](solutions/algorithms/numbers/factorial)
+  - [Fibonacci Number](solutions/algorithms/numbers/fibonacci)
+  - [Prime Number](solutions/algorithms/numbers/prime)
 
 ## How it works
 
 ### Schedule
 
-In #algorithms-curriculum channel in [Operation Code Slack](https://operationcode.org), we will solve and discuss one exercise a week. The curriculum will reset and restart after solving every exercise. The exercises will be in increasing difficulty, and though you can jump in and out, be aware that some are built on top of previously built data structures.
+The plan is to meet in #algorithms-curriculum channel on [Operation Code Slack](https://operationcode.org), and solve one or two exercises a week. The curriculum will reset and restart after solving every exercise. The exercises will be in increasing difficulty, and though you can jump in and out, be aware that some are built on top of previously built data structures.
 
 ### Folders
 
@@ -102,14 +102,12 @@ See how it reads like regular language? Understanding the test specifications wi
 
 - There will be times when the problem sets will be updated. In that case, we will announce in the channel for everyone to pull from `upstream`.
 - Enter the terminal, and run `git pull upstream master`.
-- If you have edited the `/solutions` or `/skeletons` folder, you may run into a merge conflict. At that point, please reach out to the channel on Slack.
+- If you have edited the `/solutions` or `/solutions` folder, you may run into a merge conflict. At that point, please reach out to the channel on Slack.
 
 ## How to Contribute
 
 - We need mentors in #basic-algorithms channel.
-  - Because the problem descriptions are poorly written at the moment, we will need to walk the students on Slack. Also, some may have deeper questions about the material, and we can all learn together by providing mentorship.
 - We need help writing a walkthrough for each problem set.
-  - Currently, the problemss only provide a brief description. A detailed walkthrough is needed for the first several problems in order to help people adjust to the system.
 - We need help with writing tests in other languages.
   - Not everyone maybe familiar with JavaScript. Also, learning this material is actually better in other languages such as Python or Ruby.
 - We need help with improving the solutions.
