@@ -15,8 +15,8 @@ export default class Stack {
     return this.store[this.store.length - 1];
   }
 
-  push(value) {
-    return this.store.push(value);
+  push(el) {
+    return this.store.push(el);
   }
 
   pop() {

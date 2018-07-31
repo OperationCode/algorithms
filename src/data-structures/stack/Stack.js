@@ -1,4 +1,4 @@
-export default class Queue {
+export default class Stack {
   constructor() {
     this.store = [];
   }
@@ -7,9 +7,9 @@ export default class Queue {
 
   peek() {}
 
-  enqueue(el) {}
+  push(el) {}
 
-  dequeue() {}
+  pop() {}
 
   toString() {
     return this.store.toString();

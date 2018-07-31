@@ -1,26 +1,64 @@
 # Queue
 
-In computer science, a queue is a particular kind of abstract data 
-type or collection in which the entities in the collection are 
-kept in order and the principle (or only) operations on the 
-collection are the addition of entities to the rear terminal 
-position, known as enqueue, and removal of entities from the 
-front terminal position, known as dequeue. This makes the queue 
-a First-In-First-Out (FIFO) data structure. In a FIFO data 
-structure, the first element added to the queue will be the 
-first one to be removed. This is equivalent to the requirement 
-that once a new element is added, all elements that were added 
-before have to be removed before the new element can be removed. 
-Often a peek or front operation is also entered, returning the 
-value of the front element without dequeuing it. A queue is an 
-example of a linear data structure, or more abstractly a 
-sequential collection.
+## Description
 
-Representation of a FIFO (first in, first out) queue
+A queue is a data structure that can store or retrieve one item at a time, in first-in-first-out (FIFO) order. Think of FIFO as standing in the line at the grocery store. You would expect the first person that stood in the line to be the first one served by the cashier.
 
-![Queue](https://upload.wikimedia.org/wikipedia/commons/5/52/Data_Queue.svg)
+Queue implements FIFO through two operations; `enqueue` and `dequeue`, which can be visualized in the diagram below:
 
-## References
+![Queing operations](../../../assets/queue.png)
 
-- [Wikipedia](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
-- [YouTube](https://www.youtube.com/watch?v=wjI1WNcIntg&list=PLLXdhg_r2hKA7DPDsunoDZ-Z769jWn4R8&index=3&)
+- `enqueue` operation stores the item at the back of the queue.
+- `dequeue` operation retrieves the item from the front of the queue.
+
+(_In the diagram above, the right side is the front, and the left is the back. However, the same operations are applied even when the direction is reversed_)
+
+## Implementation
+
+In this exercise, implement the following functions for the `Queue` class
+
+- `isEmpty()`
+  - Write a method that returns `true` if the queue is currently empty.
+- `peek()`
+  - Write a method that returns the element at the front of the queue.
+- `enqueue(el)`
+  - Write a method that stores an element(`el`) into the queue.
+- `dequeue()`
+  - Write a method that retrieves an element from the queue.
+- `toString()`
+  - The stringify method is provided for you. `toString()` is a useful method to implement into data structures for easier debugging.
+  - For example, you could use it for logging:
+    ```
+    const queue = new Queue();
+    constole.log(queue.toString());
+    ```
+  - A queue is simple enough to be logged without actually needing `toString()`, but with more complex data structures, this is an invaluable method.
+
+## Queue Exercises
+
+**Stack Queue**
+
+(Solve this exercise after finishing the stack exercise).
+
+Implement a queue using stacks.  Instead of using an array as your store, use a stack:
+```
+const Stack = require('../stack/Stack');
+
+export default class Stack {
+  constructor() {
+    this.store = new Stack();
+  }
+
+  isEmpty() {}
+
+  peek() {}
+
+  push(value) {}
+
+  pop() {}
+
+  toString() {
+    return this.store.toString();
+  }
+}
+```
