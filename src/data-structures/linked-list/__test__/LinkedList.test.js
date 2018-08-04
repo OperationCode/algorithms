@@ -79,19 +79,19 @@ describe('LinkedList', () => {
   it('should find node by value', () => {
     const linkedList = new LinkedList();
 
-    expect(linkedList.find({ value: 5 })).toBeNull();
+    expect(linkedList.find(5)).toBeNull();
 
     linkedList.append(1);
-    expect(linkedList.find({ value: 1 })).toBeDefined();
+    expect(linkedList.find(1)).toBeDefined();
 
     linkedList
       .append(2)
       .append(3);
 
-    const node = linkedList.find({ value: 2 });
+    const node = linkedList.find(2);
 
     expect(node.value).toBe(2);
-    expect(linkedList.find({ value: 5 })).toBeNull();
+    expect(linkedList.find(5)).toBeNull();
   });
 
   it('should insert a value after the provided value value', () => {
@@ -160,20 +160,5 @@ describe('LinkedList', () => {
     expect(linkedList.toString()).toBe('');
     expect(linkedList.head).toBeNull();
     expect(linkedList.tail).toBeNull();
-  });
-
-  it('should be possible to store objects in the list and to print them out', () => {
-    const linkedList = new LinkedList();
-
-    const nodeValue1 = { value: 1, key: 'key1' };
-    const nodeValue2 = { value: 2, key: 'key2' };
-
-    linkedList
-      .append(nodeValue1)
-      .prepend(nodeValue2);
-
-    const nodeStringifier = value => `${value.key}:${value.value}`;
-
-    expect(linkedList.toString(nodeStringifier)).toBe('key2:2,key1:1');
   });
 });

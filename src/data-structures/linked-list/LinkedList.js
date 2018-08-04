@@ -1,10 +1,7 @@
 import LinkedListNode from './LinkedListNode';
 
 export default class LinkedList {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-  }
+  constructor() {}
 
   /**
    * @param {*} value
@@ -29,16 +26,13 @@ export default class LinkedList {
    * @param {*} findParams.value
    * @return {LinkedListNode}
    */
-  find({
-    value = undefined
-  }) {}
+  find(value) {}
 
   /**
    * @param {*} value
-   * @param {*} targetValue - insert after this target value
    * @return {LinkedList}
    */
-  insertAfter(value, targetValue) {}
+  insertAfter(value, insertValue) {}
 
   /**
    * @return {LinkedListNode}
@@ -55,11 +49,11 @@ export default class LinkedList {
    */
   toArray() {
     const nodes = [];
-    let currentNode = this.head;
+    let node = this.head;
 
-    while (currentNode) {
-      nodes.push(currentNode);
-      currentNode = currentNode.next;
+    while (node) {
+      nodes.push(node);
+      node = node.next;
     }
 
     return nodes;
@@ -69,7 +63,7 @@ export default class LinkedList {
    * @param {function} [callback]
    * @return {string}
    */
-  toString(callback) {
-    return this.toArray().map(node => node.toString(callback)).toString();
+  toString() {
+    return this.toArray().map(node => node.toString()).toString();
   }
 }

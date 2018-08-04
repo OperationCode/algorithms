@@ -28,7 +28,7 @@ In this exercise, implement the following functions for the `LinkedListNode` and
     - Write a method that inserts the `value` at the end of the linked list.
   - `delete(value)`
     - Write a method that deletes the `value` in the linked list.
-  - `find({ value })`
+  - `find(value)`
     - Write a method that returns the `node` that contains the `value`.
   - `insertAfter(value, targetValue)`
     - Write a method that inserts the `node` after the `node` that contains the `targetValue`.
@@ -43,9 +43,9 @@ The most important operations are `prepend/append` for adding data, `delete` for
 
 Let's start by opening up a terminal window and running `npm run watch`. This will start our TDD framework that will automatically re-run the tests when you save any changes to your file.
 
-* In your code editor, navigate to `/algorithms/src/data-structures/LinkedListNode.js`.
-* In the constructor method, write `this.value = value` and save the changes.
-* You will see the tests run automatically in your terminal:
+- In your code editor, navigate to `/algorithms/src/data-structures/LinkedListNode.js`.
+- In the constructor method, write `this.value = value` and save the changes.
+- You will see the tests run automatically in your terminal:
 
 ![Jest TDD Console Outputs](../../../assets/linked-list-tdd.png)
 
@@ -53,33 +53,36 @@ Let's start by opening up a terminal window and running `npm run watch`. This wi
 > (press `w` for the list of available commands).
 
 The output tells you that three tests are failing:
-* ✕ should create list node with value (10ms)
-* ✕ should create list node with object as a value (2ms)
-* ✕ should link nodes together
-* ✓ should convert node to string
-* ✓ should convert node to string with custom stringifier (1ms)
 
-The code for the last two tests (`toString()` tests) have been provided for you in the skeleton.  Your task is to make the three failing tests to pass.
+- ✕ should create list node with value (10ms)
+- ✕ should create list node with object as a value (2ms)
+- ✕ should link nodes together
+- ✓ should convert node to string
+- ✓ should convert node to string with custom stringifier (1ms)
+
+The code for the last two tests (`toString()` tests) have been provided for you in the skeleton. Your task is to make the three failing tests to pass.
 
 ### `LinkedListNode`
-* The test description says `› should create list node with value`
-* The output tells us where the test is failing: `expect(node.next).toBeNull();`. It also tells us `expect(received).toBeNull()` and `Received: undefined`.
-* In this case, the test is `expect`ing `node.next` to be `null`. However, the test received  `undefined`.
-* Since `next` is undefined, let's update our `constructor()` in `LinkedListNode.js`:
+
+- The test description says `› should create list node with value`
+- The output tells us where the test is failing: `expect(node.next).toBeNull();`. It also tells us `expect(received).toBeNull()` and `Received: undefined`.
+- In this case, the test is `expect`ing `node.next` to be `null`. However, the test received `undefined`.
+- Since `next` is undefined, let's update our `constructor()` in `LinkedListNode.js`:
   ```
   constructor(value, next = null) {
     this.value = value;
     this.next = next;
   }
   ```
-* When you save the file, you should see all your tests for `LinkedListNode` pass!
-* Often, many tests can depend on the same part of the code.  In this case, solving for one test case solved all others.
+- When you save the file, you should see all your tests for `LinkedListNode` pass!
+- Often, many tests can depend on the same part of the code. In this case, solving for one test case solved all others.
 
 Now, let's open up `LinkedList.js` in our editor.
 
 ### `constructor()`
-* A linked list should always have a `head` and a `tail`.
-* The test tells us: `expect(linkedList.head).toBeNull();`. Let's create the instance variables:
+
+- A linked list should always have a `head` and a `tail`.
+- The test tells us: `expect(linkedList.head).toBeNull();`. Let's create the instance variables:
   ```
   constructor() {
     this.head = null;
@@ -88,25 +91,29 @@ Now, let's open up `LinkedList.js` in our editor.
   ```
 
 ### `prepend()`
-* The `prepend` method inserts the item at the beginning of the list.
-* Prepending an item is a simple operation:
-  * Create a new `Node`.
-  * Set the new `node`'s `next to be the current head node.
-  * Update the `head` to point at the new node.
-* We also have to consider a case where this is the first item stored in the list.  In that case, we also set the tail to the same node.
+
+- The `prepend` method inserts the item at the beginning of the list.
+- Prepending an item is a simple operation:
+  - Create a new `Node`.
+  - Set the new `node`'s `next to be the current head node.
+  - Update the `head` to point at the new node.
+- We also have to consider a case where this is the first item stored in the list. In that case, we also set the tail to the same node.
 
 ### `append()`
-* The `append` method inserts the item at the end of the list.
-* Operations:
-  * Create a new `Node`.
-  * Set the tail's `next` to be the new node.
-  * Update `tail` to point at the new node.
-* Again, take into consideration when this is the first item stored in the list.
 
-### `find({ value })`
-* The `find` method returns the node with the target value.
-* A node can be visited by utilizing a loop and `node.next`.
-* The following snippet traverses the entire list:
+- The `append` method inserts the item at the end of the list.
+- Operations:
+  - Create a new `Node`.
+  - Set the tail's `next` to be the new node.
+  - Update `tail` to point at the new node.
+- Again, take into consideration when this is the first item stored in the list.
+
+### `find(value)`
+
+- The `find` method returns the node with the target value.
+- A node can be visited by utilizing a loop and `node.next`.
+- The following snippet traverses the entire list:
+
   ```
   let currentNode = node;
 
@@ -115,34 +122,38 @@ Now, let's open up `LinkedList.js` in our editor.
     console.log(currentNode.value)
   }
   ```
-* Think about how the above concept can be applied to find the target node.
+
+- Think about how the above concept can be applied to find the target node.
 
 ### `insertAfter(value, insertValue)`
-* The `insertAfter` method stores the `insertValue` right after the node with the `value`.
-* Operation:
+
+- The `insertAfter` method stores the `insertValue` right after the node with the `value`.
+- Operation:
   ![Linked List Delete Operation](../../../assets/linked-list-insert-after.png)
-  * Create a new `Node`.
-  * Find the node with the target value.
-  * Set the found node's `next` to the new node.
-  * Set new node's `next` to the found node's `next.
-* Utilize the previously written `find` method to find the node.
+  - Create a new `Node`.
+  - Find the node with the target value.
+  - Set the found node's `next` to the new node.
+  - Set new node's `next` to the found node's `next.
+- Utilize the previously written `find` method to find the node.
 
 ### `delete(value)`
-* The `delete` method removes the first node with the specified value.
-* Operations:
+
+- The `delete` method removes the first node with the specified value.
+- Operations:
   ![Linked List Delete Operation](../../../assets/linked-list-delete.png)
-  * Traverse the list and locate the node before the target node.
-  * Remove the target node that is placed after the found node.
-    * In a linked list, you don't have to delete the actual node.
-    * Deleting means removing the reference to that node from the list.
-    * The above diagram shows that all we have to do is set the target node's previous node's `next` to point at the target node's `next`.
-    * This means that we must locate the node right before the target node.  Think about how you would be able to tell when the next node will be the target node.
-  * Also, take into consideration if the `head` or `tail` node is the node to be deleted.
-* This is the most complex operation in a linked list.  Drawing the operation on paper can help you visualize the problem.  Don't hesitate to reach out to #basic-algorithms channel on Slack if you are stuck.
+  - Traverse the list and locate the node before the target node.
+  - Remove the target node that is placed after the found node.
+    - In a linked list, you don't have to delete the actual node.
+    - Deleting means removing the reference to that node from the list.
+    - The above diagram shows that all we have to do is set the target node's previous node's `next` to point at the target node's `next`.
+    - This means that we must locate the node right before the target node. Think about how you would be able to tell when the next node will be the target node.
+  - Also, take into consideration if the `head` or `tail` node is the node to be deleted.
+- This is the most complex operation in a linked list. Drawing the operation on paper can help you visualize the problem. Don't hesitate to reach out to #basic-algorithms channel on Slack if you are stuck.
 
 ### `deleteHead()` / `deleteTail()`
-* The `deleteHead/Tail` methods are utility methods for common operations.
+
+- The `deleteHead/Tail` methods are utility methods for common operations.
 
 ## Time and Space Complexity Analysis
 
-This section will be released in the future when the Big O notation tutorials are written.  Please join #basic-algorithms channel for the update notifications.
+This section will be released in the future when the Big O notation tutorials are written. Please join #basic-algorithms channel for the update notifications.

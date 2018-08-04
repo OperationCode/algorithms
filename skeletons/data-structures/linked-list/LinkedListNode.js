@@ -1,5 +1,9 @@
 export default class LinkedListNode {
-  constructor(value, next = null) {}
+  constructor(value, next = null) {
+    this.value = value;
+  }
 
-  toString(callback) {}
+  toString() {
+    return this.value.toString();
+  }
 }
