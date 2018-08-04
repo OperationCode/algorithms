@@ -131,9 +131,8 @@ Now, let's open up `LinkedList.js` in our editor.
 * The `delete` method removes the first node with the specified value.
 * Operations:
   ![Linked List Delete Operation](../../../assets/linked-list-delete.png)
-  * Traverse the list and locate the target node
-
-  * After finding the target node, remove that node.
+  * Traverse the list and locate the node before the target node.
+  * Remove the target node that is placed after the found node.
     * In a linked list, you don't have to delete the actual node.
     * Deleting means removing the reference to that node from the list.
     * The above diagram shows that all we have to do is set the target node's previous node's `next` to point at the target node's `next`.
