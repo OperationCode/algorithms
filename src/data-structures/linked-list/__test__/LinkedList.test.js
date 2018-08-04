@@ -4,13 +4,12 @@ describe('LinkedList', () => {
   it('should create empty linked list', () => {
     const linkedList = new LinkedList();
     expect(linkedList.toString()).toBe('');
+    expect(linkedList.head).toBeNull();
+    expect(linkedList.tail).toBeNull();
   });
 
   it('should append node to linked list', () => {
     const linkedList = new LinkedList();
-
-    expect(linkedList.head).toBeNull();
-    expect(linkedList.tail).toBeNull();
 
     linkedList.append(1);
     linkedList.append(2);
@@ -75,6 +74,34 @@ describe('LinkedList', () => {
 
     linkedList.delete(2);
     expect(linkedList.toString()).toBe('');
+  });
+
+  it('should find node by value', () => {
+    const linkedList = new LinkedList();
+
+    expect(linkedList.find({ value: 5 })).toBeNull();
+
+    linkedList.append(1);
+    expect(linkedList.find({ value: 1 })).toBeDefined();
+
+    linkedList
+      .append(2)
+      .append(3);
+
+    const node = linkedList.find({ value: 2 });
+
+    expect(node.value).toBe(2);
+    expect(linkedList.find({ value: 5 })).toBeNull();
+  });
+
+  it('should insert a value after the provided value value', () => {
+    const linkedList = new LinkedList();
+    linkedList
+      .append(1)
+      .append(3)
+      .insertAfter(2, 1);
+
+    expect(linkedList.toString()).toBe('1,2,3');
   });
 
   it('should delete linked list tail', () => {
@@ -148,23 +175,5 @@ describe('LinkedList', () => {
     const nodeStringifier = value => `${value.key}:${value.value}`;
 
     expect(linkedList.toString(nodeStringifier)).toBe('key2:2,key1:1');
-  });
-
-  it('should find node by value', () => {
-    const linkedList = new LinkedList();
-
-    expect(linkedList.find({ value: 5 })).toBeNull();
-
-    linkedList.append(1);
-    expect(linkedList.find({ value: 1 })).toBeDefined();
-
-    linkedList
-      .append(2)
-      .append(3);
-
-    const node = linkedList.find({ value: 2 });
-
-    expect(node.value).toBe(2);
-    expect(linkedList.find({ value: 5 })).toBeNull();
   });
 });

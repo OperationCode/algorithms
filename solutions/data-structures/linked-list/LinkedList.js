@@ -1,18 +1,9 @@
 import LinkedListNode from './LinkedListNode';
-import Comparator from '../../utils/comparator/Comparator';
 
 export default class LinkedList {
-  /**
-   * @param {Function} [comparatorFunction]
-   */
-  constructor(comparatorFunction) {
-    /** @var LinkedListNode */
+  constructor() {
     this.head = null;
-
-    /** @var LinkedListNode */
     this.tail = null;
-
-    this.compare = new Comparator(comparatorFunction);
   }
 
   /**
@@ -66,7 +57,7 @@ export default class LinkedList {
     let deletedNode = null;
 
     // If the head must be deleted then make 2nd node to be a head.
-    while (this.head && this.compare.equal(this.head.value, value)) {
+    while (this.head && this.head.value === value) {
       deletedNode = this.head;
       this.head = this.head.next;
     }
@@ -76,7 +67,7 @@ export default class LinkedList {
     if (currentNode !== null) {
       // If next node must be deleted then make next node to be a next next one.
       while (currentNode.next) {
-        if (this.compare.equal(currentNode.next.value, value)) {
+        if (currentNode.next.value === value) {
           deletedNode = currentNode.next;
           currentNode.next = currentNode.next.next;
         } else {
@@ -86,7 +77,7 @@ export default class LinkedList {
     }
 
     // Check if tail must be deleted.
-    if (this.compare.equal(this.tail.value, value)) {
+    if (this.tail.value === value) {
       this.tail = currentNode;
     }
 
@@ -96,10 +87,9 @@ export default class LinkedList {
   /**
    * @param {Object} findParams
    * @param {*} findParams.value
-   * @param {function} [findParams.callback]
    * @return {LinkedListNode}
    */
-  find({ value = undefined, callback = undefined }) {
+  find({ value  }) {
     if (!this.head) {
       return null;
     }
@@ -107,13 +97,7 @@ export default class LinkedList {
     let currentNode = this.head;
 
     while (currentNode) {
-      // If callback is specified then try to find node by callback.
-      if (callback && callback(currentNode.value)) {
-        return currentNode;
-      }
-
-      // If value is specified then try to compare by value..
-      if (value !== undefined && this.compare.equal(currentNode.value, value)) {
+      if (value === currentNode.value) {
         return currentNode;
       }
 
@@ -123,12 +107,24 @@ export default class LinkedList {
     return null;
   }
 
+    /**
+   * @param {*} value
+   * @return {LinkedList}
+   */
+  insertAfter(value, insertValue) {
+    const targetNode = this.find({ value: insertValue });
+    const newNode = new LinkedListNode(value, targetNode.next);
+
+    targetNode.next = newNode;
+    return newNode;
+  }
+
   /**
    * @return {LinkedListNode}
    */
   deleteTail() {
+    // There is only one node in linked list.
     if (this.head === this.tail) {
-      // There is only one node in linked list.
       const deletedTail = this.tail;
       this.head = null;
       this.tail = null;
@@ -141,6 +137,7 @@ export default class LinkedList {
 
     // Rewind to the last node and delete "next" link for the node before the last one.
     let currentNode = this.head;
+
     while (currentNode.next) {
       if (!currentNode.next.next) {
         currentNode.next = null;
@@ -179,8 +176,8 @@ export default class LinkedList {
    */
   toArray() {
     const nodes = [];
-
     let currentNode = this.head;
+
     while (currentNode) {
       nodes.push(currentNode);
       currentNode = currentNode.next;

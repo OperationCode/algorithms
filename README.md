@@ -44,7 +44,64 @@ The problem sets below contain information on key data structures, sorting/searc
 
 ### Schedule
 
-The plan is to meet in #algorithms-curriculum channel on [Operation Code Slack](https://operationcode.org), and solve one or two exercises a week. The curriculum will reset and restart after solving every exercise. The exercises will be in increasing difficulty, and though you can jump in and out, be aware that some are built on top of previously built data structures.
+These schedules are guidelines.  Please approach them at your own pace.
+
+#### Regular
+Recommended track for beginners who can devote 2-4 hours a day.
+
+* Day 1
+  - Queue (1 Hour)
+  - Stack (1 Hour)
+* Day 2
+  - Linked List (4 Hours)
+* Day 3
+  - Hash Table (4 Hours)
+* Day 4
+  - Selection Sort (30 Minutes)
+  - Insertion Sort (30 Minutes)
+  - Bubble Sort (2 Hours)
+* Day 5
+  - Merge Sort (4 Hours)
+* Day 6
+  - Quicksort (4 Hours)
+* Day 6
+  - Binary Search  (2 Hours)
+* Day 7
+  - Depth-First Search (2 Hour)
+* Day 8
+  - Breadth-First Search (2 Hour)
+* Day 9
+  - Binary Search Tree (4 Hours)
+* Day 10
+  - Binary Search Tree (4 Hours)
+* Day 11
+  - Fibonacci Number (1 Hour)
+  - Prime Number (1 Hour)
+  - Factorial (2 Hours)
+
+#### Quick
+Recommended for someone who is comfortable coding and can devote ~6 hours a day.
+
+* Day 1
+  - Queue (30 Minutes)
+  - Stack (30 Minutes)
+  - Linked List (2 Hours)
+  - Hash Table (2 Hours)
+* Day 2
+  - Selection Sort (30 Minutes)
+  - Insertion Sort (30 Minutes)
+  - Bubble Sort (1 Hour)
+  - Merge Sort (4 Hours)
+  - Quicksort (2 Hours)
+* Day 3
+  - Binary Search (1 Hour)
+  - Depth-First Search (1 Hour)
+  - Breadth-First Search (1 Hour)
+  - Factorial (30 Minutes)
+  - Fibonacci Number (1 Hour)
+  - Prime Number (1 Hour)
+* Day 4
+  - Binary Search Tree (6 Hours)
 
 ### Folders
 
