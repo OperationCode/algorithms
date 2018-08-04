@@ -10,7 +10,10 @@ describe('DoublyLinkedListNode', () => {
   });
 
   it('should create list node with object as a value', () => {
-    const nodeValue = { value: 1, key: 'test' };
+    const nodeValue = {
+      value: 1,
+      key: 'test'
+    };
     const node = new DoublyLinkedListNode(nodeValue);
 
     expect(node.value.value).toBe(1);
@@ -43,13 +46,5 @@ describe('DoublyLinkedListNode', () => {
 
     node.value = 'string value';
     expect(node.toString()).toBe('string value');
-  });
-
-  it('should convert node to string with custom stringifier', () => {
-    const nodeValue = { value: 1, key: 'test' };
-    const node = new DoublyLinkedListNode(nodeValue);
-    const toStringCallback = value => `value: ${value.value}, key: ${value.key}`;
-
-    expect(node.toString(toStringCallback)).toBe('value: 1, key: test');
   });
 });

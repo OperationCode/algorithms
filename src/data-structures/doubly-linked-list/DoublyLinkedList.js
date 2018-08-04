@@ -1,11 +1,7 @@
 import DoublyLinkedListNode from './DoublyLinkedListNode';
-import Comparator from '../../utils/comparator/Comparator';
 
 export default class DoublyLinkedList {
-  /**
-   * @param {Function} [comparatorFunction]
-   */
-  constructor(comparatorFunction) {}
+  constructor() {}
 
   /**
    * @param {*} value
@@ -20,26 +16,12 @@ export default class DoublyLinkedList {
   append(value) {}
 
   /**
-   * @param {*} value
-   * @return {DoublyLinkedListNode}
-   */
-  delete(value) {}
-
-  /**
    * @param {Object} findParams
    * @param {*} findParams.value
    * @param {function} [findParams.callback]
    * @return {DoublyLinkedListNode}
    */
-  find({
-    value = undefined,
-    callback = undefined,
-  }) {}
-
-  /**
-   * @return {DoublyLinkedListNode}
-   */
-  deleteTail() {}
+  find(value) {}
 
   /**
    * @return {DoublyLinkedListNode}
@@ -47,15 +29,26 @@ export default class DoublyLinkedList {
   deleteHead() {}
 
   /**
+   * @return {DoublyLinkedListNode}
+   */
+  deleteTail() {}
+
+  /**
+   * @param {*} value
+   * @return {DoublyLinkedListNode}
+   */
+  delete(value) {}
+
+  /**
    * @return {DoublyLinkedListNode[]}
    */
   toArray() {
     const nodes = [];
+    let node = this.head;
 
-    let currentNode = this.head;
-    while (currentNode) {
-      nodes.push(currentNode);
-      currentNode = currentNode.next;
+    while (node) {
+      nodes.push(node);
+      node = node.next;
     }
 
     return nodes;
@@ -65,7 +58,7 @@ export default class DoublyLinkedList {
    * @param {function} [callback]
    * @return {string}
    */
-  toString(callback) {
-    return this.toArray().map(node => node.toString(callback)).toString();
+  toString() {
+    return this.toArray().map(node => node.toString()).toString();
   }
 }

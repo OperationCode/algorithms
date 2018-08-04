@@ -1,25 +1,79 @@
 # Doubly Linked List
 
-In computer science, a **doubly linked list** is a linked data structure that 
-consists of a set of sequentially linked records called nodes. Each node contains 
-two fields, called links, that are references to the previous and to the next 
-node in the sequence of nodes. The beginning and ending nodes' previous and next 
-links, respectively, point to some kind of terminator, typically a sentinel 
-node or null, to facilitate traversal of the list. If there is only one 
-sentinel node, then the list is circularly linked via the sentinel node. It can 
-be conceptualized as two singly linked lists formed from the same data items, 
-but in opposite sequential orders.
+## Description
 
-![Doubly Linked List](https://upload.wikimedia.org/wikipedia/commons/5/5e/Doubly-linked-list.svg)
+Unlike a singly-linked list, a doubly-linked list node keeps a reference to the previous node in addition to the next node. This allows traversal in both directions of the list, towards the head and the tail.
 
-The two node links allow traversal of the list in either direction. While adding 
-or removing a node in a doubly linked list requires changing more links than the 
-same operations on a singly linked list, the operations are simpler and 
-potentially more efficient (for nodes other than first nodes) because there 
-is no need to keep track of the previous node during traversal or no need 
-to traverse the list to find the previous node, so that its link can be modified.
+![Linked List](../../../assets/doubly-linked-list.png)
 
-## References
+The operations for the doubly linked list is the same a singly linked list.
 
-- [Wikipedia](https://en.wikipedia.org/wiki/Doubly_linked_list)
-- [YouTube](https://www.youtube.com/watch?v=JdQeNxWCguQ&t=7s&index=72&list=PLLXdhg_r2hKA7DPDsunoDZ-Z769jWn4R8)
+## Implementation
+
+In this exercise, implement the following functions for the `DoublyLinkedListNode` and `DoublyLinkedList` classes:
+
+- `DoublyLinkedListNode`
+  - `constructor()`
+    - Write a method that instantiates the node.
+    - The node takes `value`, `previous` and `next`.
+- `LinkedList`
+  - `constructor()`
+    - Write a method that instantiates the list.
+    - The instance variables `head` and `tail` should be set to `null`.
+  - `prepend(value)`
+    - Write a method that inserts the `value` at the beginning of the linked list.
+  - `append(value)`
+    - Write a method that inserts the `value` at the end of the linked list.
+  - `find(value)`
+    - Write a method that returns the `node` that contains the `value`.
+  - `deleteHead()`
+    - Write a method that deletes the first element in the linked list.
+  - `deleteTail()`
+    - Write a method that deletes the last element in the linked list.
+  - `delete(value)`
+    - Write a method that deletes the `value` in the linked list.
+
+The most important operations are `prepend/append` for adding data, `delete` for removing data, and `find` for retrieving data.
+
+## Detailed Walkthrough
+
+To start, build `DoublyLinkedListNode`. A doubly linked list node keeps a reference to the previous node in addition to the next node. Then, build the constructor the same way as the singly linked list.
+
+> Jest Tip: If you need to filter by the exercise name, press `p`.
+> After pressing `p`, enter the string "Doubly" to filter by doubly linked list tests.
+
+### `prepend()`
+
+- The `prepend` method inserts the item at the beginning of the list.
+- Operations:
+  - Create a new `Node`.
+  - Set the current head's previous reference to the new node.
+  - Set the new node's next to the current `head`.
+  - Update `head` to point at the new node.
+- Take into consideration where this is the first value in the linked list.
+
+### `append()`
+
+- The `append` method inserts the item at the end of the list.
+- Operations:
+  - Create a new `Node`.
+  - Set the current tail's `next` to be the new node.
+  - Set the new node's previous to the current `tail`.
+  - Update `tail` to point at the new node.
+- Take into consideration where this is the first value in the linked list.
+
+### `find(value)`
+
+- The `find` method returns the node with the target value.
+- Traverse the array in the same way as a singly linked list.
+
+### `deleteHead()` / `deleteTail()`
+
+- The `deleteHead/Tail` methods are useful utilities methods.
+- Take into consideration where there is only one node in the linked list.
+
+### `delete(value)`
+
+- The `delete` method removes the first node with the specified value.
+- The delete operation for a doubly linked list is significantly simpler due to having a reference to the previous node.
+- Utilize `find` and `deleteHead/Tail` methods written above to write the method.
