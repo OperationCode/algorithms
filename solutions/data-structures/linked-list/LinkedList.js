@@ -89,30 +89,42 @@ export default class LinkedList {
    * @param {*} findParams.value
    * @return {LinkedListNode}
    */
-  find({ value  }) {
+  find({
+    value,
+    callback
+  }) {
     if (!this.head) {
       return null;
     }
 
-    let currentNode = this.head;
+    let node = this.head;
 
-    while (currentNode) {
-      if (value === currentNode.value) {
-        return currentNode;
+    while (node) {
+      const callbackResult = callback && callback(node.value);
+
+      if (callbackResult) {
+        return node;
       }
 
-      currentNode = currentNode.next;
+      if (node.value === value) {
+        return node;
+      }
+
+      node = node.next;
     }
 
     return null;
   }
 
-    /**
+  /**
    * @param {*} value
    * @return {LinkedList}
    */
   insertAfter(value, insertValue) {
-    const targetNode = this.find({ value: insertValue });
+    const targetNode = this.find({
+      value: insertValue
+    });
+
     const newNode = new LinkedListNode(value, targetNode.next);
 
     targetNode.next = newNode;
@@ -123,7 +135,6 @@ export default class LinkedList {
    * @return {LinkedListNode}
    */
   deleteTail() {
-    // There is only one node in linked list.
     if (this.head === this.tail) {
       const deletedTail = this.tail;
       this.head = null;
@@ -132,10 +143,7 @@ export default class LinkedList {
       return deletedTail;
     }
 
-    // If there are many nodes in linked list...
     const deletedTail = this.tail;
-
-    // Rewind to the last node and delete "next" link for the node before the last one.
     let currentNode = this.head;
 
     while (currentNode.next) {
@@ -159,7 +167,7 @@ export default class LinkedList {
       return null;
     }
 
-    const deletedHead = this.head;
+    const node = this.head;
 
     if (this.head.next) {
       this.head = this.head.next;
@@ -168,7 +176,7 @@ export default class LinkedList {
       this.tail = null;
     }
 
-    return deletedHead;
+    return node;
   }
 
   /**
@@ -176,11 +184,11 @@ export default class LinkedList {
    */
   toArray() {
     const nodes = [];
-    let currentNode = this.head;
+    let node = this.head;
 
-    while (currentNode) {
-      nodes.push(currentNode);
-      currentNode = currentNode.next;
+    while (node) {
+      nodes.push(node);
+      node = node.next;
     }
 
     return nodes;
@@ -190,7 +198,7 @@ export default class LinkedList {
    * @param {function} [callback]
    * @return {string}
    */
-  toString(callback) {
-    return this.toArray().map(node => node.toString(callback)).toString();
+  toString() {
+    return this.toArray().map(node => node.toString()).toString();
   }
 }

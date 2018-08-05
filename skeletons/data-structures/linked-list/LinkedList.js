@@ -1,11 +1,7 @@
 import LinkedListNode from './LinkedListNode';
-import Comparator from '../../utils/comparator/Comparator';
 
 export default class LinkedList {
-  /**
-   * @param {Function} [comparatorFunction]
-   */
-  constructor(comparatorFunction) {}
+  constructor() {}
 
   /**
    * @param {*} value
@@ -28,13 +24,18 @@ export default class LinkedList {
   /**
    * @param {Object} findParams
    * @param {*} findParams.value
-   * @param {function} [findParams.callback]
    * @return {LinkedListNode}
    */
   find({
-    value = undefined,
-    callback = undefined,
+    value,
+    callback
   }) {}
+
+  /**
+   * @param {*} value
+   * @return {LinkedList}
+   */
+  insertAfter(value, insertValue) {}
 
   /**
    * @return {LinkedListNode}
@@ -49,11 +50,23 @@ export default class LinkedList {
   /**
    * @return {LinkedListNode[]}
    */
-  toArray() {}
+  toArray() {
+    const nodes = [];
+    let node = this.head;
+
+    while (node) {
+      nodes.push(node);
+      node = node.next;
+    }
+
+    return nodes;
+  }
 
   /**
    * @param {function} [callback]
    * @return {string}
    */
-  toString(callback) {}
+  toString() {
+    return this.toArray().map(node => node.toString()).toString();
+  }
 }
