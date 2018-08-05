@@ -26,7 +26,10 @@ export default class LinkedList {
    * @param {*} findParams.value
    * @return {LinkedListNode}
    */
-  find(value) {}
+  find({
+    value,
+    callback
+  }) {}
 
   /**
    * @param {*} value

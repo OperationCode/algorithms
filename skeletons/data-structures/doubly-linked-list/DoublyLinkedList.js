@@ -21,7 +21,10 @@ export default class DoublyLinkedList {
    * @param {function} [findParams.callback]
    * @return {DoublyLinkedListNode}
    */
-  find(value) {}
+  find({
+    value,
+    callback
+  }) {}
 
   /**
    * @return {DoublyLinkedListNode}

@@ -79,19 +79,56 @@ describe('LinkedList', () => {
   it('should find node by value', () => {
     const linkedList = new LinkedList();
 
-    expect(linkedList.find(5)).toBeNull();
+    expect(linkedList.find({
+      value: 5
+    })).toBeNull();
 
     linkedList.append(1);
-    expect(linkedList.find(1)).toBeDefined();
+    expect(linkedList.find({
+      value: 1
+    })).toBeDefined();
 
     linkedList
       .append(2)
       .append(3);
 
-    const node = linkedList.find(2);
+    const node = linkedList.find({
+      value: 2
+    });
 
     expect(node.value).toBe(2);
-    expect(linkedList.find(5)).toBeNull();
+    expect(linkedList.find({
+      value: 5
+    })).toBeNull();
+  });
+
+  it('should find node by callback', () => {
+    const linkedList = new LinkedList();
+    linkedList
+      .append({
+        value: 1,
+        key: 'test1'
+      })
+      .append({
+        value: 2,
+        key: 'test2'
+      })
+      .append({
+        value: 3,
+        key: 'test3'
+      });
+
+    const node = linkedList.find({
+      callback: value => value.key === 'test2'
+    });
+
+    expect(node).toBeDefined();
+    expect(node.value.value).toBe(2);
+    expect(node.value.key).toBe('test2');
+
+    expect(linkedList.find({
+      callback: value => value.key === 'test5'
+    })).toBeNull();
   });
 
   it('should insert a value after the provided value value', () => {

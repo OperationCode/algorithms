@@ -50,10 +50,19 @@ export default class DoublyLinkedList {
    * @param {function} [findParams.callback]
    * @return {DoublyLinkedListNode}
    */
-  find(value) {
+  find({
+    value,
+    callback
+  }) {
     let node = this.head;
 
     while (node) {
+      const callbackResult = callback && callback(node.value);
+
+      if (callbackResult) {
+        return node;
+      }
+
       if (node.value === value) {
         return node;
       }
@@ -111,7 +120,9 @@ export default class DoublyLinkedList {
    * @return {DoublyLinkedListNode}
    */
   delete(value) {
-    const node = this.find(value);
+    const node = this.find({
+      value
+    });
 
     if (!node) {
       return null;

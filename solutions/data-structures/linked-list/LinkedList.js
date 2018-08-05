@@ -89,19 +89,28 @@ export default class LinkedList {
    * @param {*} findParams.value
    * @return {LinkedListNode}
    */
-  find(value) {
+  find({
+    value,
+    callback
+  }) {
     if (!this.head) {
       return null;
     }
 
-    let currentNode = this.head;
+    let node = this.head;
 
-    while (currentNode) {
-      if (value === currentNode.value) {
-        return currentNode;
+    while (node) {
+      const callbackResult = callback && callback(node.value);
+
+      if (callbackResult) {
+        return node;
       }
 
-      currentNode = currentNode.next;
+      if (node.value === value) {
+        return node;
+      }
+
+      node = node.next;
     }
 
     return null;
@@ -112,7 +121,10 @@ export default class LinkedList {
    * @return {LinkedList}
    */
   insertAfter(value, insertValue) {
-    const targetNode = this.find(insertValue);
+    const targetNode = this.find({
+      value: insertValue
+    });
+
     const newNode = new LinkedListNode(value, targetNode.next);
 
     targetNode.next = newNode;
