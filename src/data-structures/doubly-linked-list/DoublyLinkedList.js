@@ -61,7 +61,7 @@ export default class DoublyLinkedList {
    * @param {function} [callback]
    * @return {string}
    */
-  toString() {
-    return this.toArray().map(node => node.toString()).toString();
+  toString(callback) {
+    return this.toArray().map(node => node.toString(callback)).toString();
   }
 }

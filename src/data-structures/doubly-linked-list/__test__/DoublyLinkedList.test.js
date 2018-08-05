@@ -199,4 +199,25 @@ describe('DoublyLinkedList', () => {
     expect(linkedList.head).toBeNull();
     expect(linkedList.tail).toBeNull();
   });
+
+  it('should be possible to store objects in the list and to print them out', () => {
+    const linkedList = new DoublyLinkedList();
+
+    const nodeValue1 = {
+      value: 1,
+      key: 'key1',
+    };
+    const nodeValue2 = {
+      value: 2,
+      key: 'key2',
+    };
+
+    linkedList
+      .append(nodeValue1)
+      .prepend(nodeValue2);
+
+    const nodeStringifier = value => `${value.key}:${value.value}`;
+
+    expect(linkedList.toString(nodeStringifier)).toBe('key2:2,key1:1');
+  });
 });
