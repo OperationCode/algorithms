@@ -17,6 +17,20 @@ describe('HashTable', () => {
     expect(hashTable.hash('abc')).toBe(6);
   });
 
+  it('should be possible to add objects to hash table', () => {
+    const hashTable = new HashTable();
+
+    hashTable.set('objectKey', {
+      prop1: 'a',
+      prop2: 'b'
+    });
+
+    const object = hashTable.get('objectKey');
+    expect(object).toBeDefined();
+    expect(object.prop1).toBe('a');
+    expect(object.prop2).toBe('b');
+  });
+
   it('should set, read and delete data with collisions', () => {
     const hashTable = new HashTable(3);
 
@@ -43,47 +57,16 @@ describe('HashTable', () => {
 
     expect(hashTable.get('a')).toBe('sky');
     expect(hashTable.get('d')).toBe('ocean');
-    expect(hashTable.get('x')).not.toBeDefined();
+    expect(hashTable.get('x')).toBeNull();
 
     hashTable.delete('a');
 
     expect(hashTable.delete('not-existing')).toBeNull();
 
-    expect(hashTable.get('a')).not.toBeDefined();
+    expect(hashTable.get('a')).toBeNull();
     expect(hashTable.get('d')).toBe('ocean');
 
     hashTable.set('d', 'ocean-new');
     expect(hashTable.get('d')).toBe('ocean-new');
-  });
-
-  it('should be possible to add objects to hash table', () => {
-    const hashTable = new HashTable();
-
-    hashTable.set('objectKey', { prop1: 'a', prop2: 'b' });
-
-    const object = hashTable.get('objectKey');
-    expect(object).toBeDefined();
-    expect(object.prop1).toBe('a');
-    expect(object.prop2).toBe('b');
-  });
-
-  it('should track actual keys', () => {
-    const hashTable = new HashTable(3);
-
-    hashTable.set('a', 'sky-old');
-    hashTable.set('a', 'sky');
-    hashTable.set('b', 'sea');
-    hashTable.set('c', 'earth');
-    hashTable.set('d', 'ocean');
-
-    expect(hashTable.getKeys()).toEqual(['a', 'b', 'c', 'd']);
-    expect(hashTable.has('a')).toBeTruthy();
-    expect(hashTable.has('x')).toBeFalsy();
-
-    hashTable.delete('a');
-
-    expect(hashTable.has('a')).toBeFalsy();
-    expect(hashTable.has('b')).toBeTruthy();
-    expect(hashTable.has('x')).toBeFalsy();
   });
 });
