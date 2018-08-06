@@ -66,7 +66,7 @@ export default class LinkedList {
 
     if (currentNode !== null) {
       // If next node must be deleted then make next node to be a next next one.
-      while (currentNode.next) {
+      while (currentNode && currentNode.next) {
         if (currentNode.next.value === value) {
           deletedNode = currentNode.next;
           currentNode.next = currentNode.next.next;
