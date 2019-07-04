@@ -9,7 +9,7 @@ export default class Stack {
 
   peek() {
     if (this.isEmpty()) {
-      return;
+      return null;
     }
 
     return this.store[this.store.length - 1];
@@ -20,6 +20,7 @@ export default class Stack {
   }
 
   pop() {
+    if (this.store.length == 0) return null;
     return this.store.pop();
   }
 

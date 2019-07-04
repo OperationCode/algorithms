@@ -12,7 +12,7 @@ export default class Queue {
       return null;
     }
 
-    return this.store[0];
+    return this.store[this.store.length -1];
   }
 
   enqueue(el) {
