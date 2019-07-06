@@ -3,8 +3,13 @@ export default class Queue {
     this.store = [];
   }
 
-  isEmpty() {
-    return !this.store.length;
+
+  length(){
+      return this.store.length;
+  }
+
+  isEmpty() {     
+   return this.store.length === 0;
   }
 
   peek() {
@@ -12,7 +17,7 @@ export default class Queue {
       return null;
     }
 
-    return this.store[this.store.length -1];
+    return this.store[this.store.length-1];
   }
 
   enqueue(el) {

@@ -6,7 +6,7 @@ A linked list is a linear colletion of elements _in sequential order_. Imagine a
 
 ![Linked List](../../../assets/linked-list-overview.png)
 
-A linked list is composed of a smaller data structure usually called a `Node`. The node object contains the `value` of the element itself, and also a pointer to the `next` node in the chain. By utilizing `node.next`, you can traverse the list. The beginning of a linked list is denoted with `head` and the last element is `tail`.
+A linked list is composed of a smaller data structure usually called a `Node`. The node object contains the `value` of the element itself, and also a pointer to the `next` node in the chain. By utilizing `node.next`, you can traverse the list. The beginning of a linked list is denoted with `head` and the last element is `tail`.   The 'tail' of a list may refer either to the rest of the list after the head, or to the last node in the list.  We will refer to the last node as the tail, but it is worth remembering that some people, especially those fro mthe functional programming community, consider the rest of the list the tail.
 
 In a singly-linked list, the link is established in _one direction_ only, where the node only keeps track of the next node in the chain. This means that with a singly-linked list, you can only traverse in the direction of the tail. On the other hand, a node in a doubly-linked list keeps track of both `next` and `previous` which allows you to traverse in both directions (towards `head` and `tail`).
 
@@ -27,9 +27,9 @@ In this exercise, implement the following functions for the `LinkedListNode` and
   - `append(value)`
     - Write a method that inserts the `value` at the end of the linked list.
   - `delete(value)`
-    - Write a method that deletes the `value` in the linked list.
+    - Write a method that deletes the first node that contains the `value` in the linked list.
   - `find(value)`
-    - Write a method that returns the `node` that contains the `value`.
+    - Write a method that returns the first `node` that contains the `value`.
   - `insertAfter(value, targetValue)`
     - Write a method that inserts the `node` after the `node` that contains the `targetValue`.
   - `deleteHead()`
@@ -106,7 +106,7 @@ Now, let's open up `LinkedList.js` in our editor.
   - Create a new `Node`.
   - Set the tail's `next` to be the new node.
   - Update `tail` to point at the new node.
-- Again, take into consideration when this is the first item stored in the list.
+- Again, take into consideration when this is the first/last item stored in the list.
 
 ### `find(value)`
 
@@ -125,6 +125,9 @@ Now, let's open up `LinkedList.js` in our editor.
 
 - Think about how the above concept can be applied to find the target node.
 
+A simple implementation of `find` would take a single argument, the value to be found.  However, sometimes we want to find an object, and know only the value of ones of its slots.  We might have a list of employee objects with slots name, address, and employee-id.  Our `find` method should be able to return an employee object just by taking the id.  We enable this by making the single argument to find and object with two slots, `value:` and `callback:`.  If the `value:` slot is set, we use it, as normal.  If the `callback:` slot if set, it must be a function that can be applied to the nodes of the list, and which returns an object.  It should return true for the object that should be returned.  This use of callbacks is very common in javascript, so is worth practising.   
+
+
 ### `insertAfter(value, insertValue)`
 
 - The `insertAfter` method stores the `insertValue` right after the node with the `value`.
@@ -134,6 +137,7 @@ Now, let's open up `LinkedList.js` in our editor.
   - Find the node with the target value.
   - Set the found node's `next` to the new node.
   - Set new node's `next` to the found node's `next.
+  - If the node is inserted at the end, the tail needs to be set correctly.
 - Utilize the previously written `find` method to find the node.
 
 ### `delete(value)`
@@ -149,11 +153,31 @@ Now, let's open up `LinkedList.js` in our editor.
     - This means that we must locate the node right before the target node. Think about how you would be able to tell when the next node will be the target node.
   - Also, take into consideration if the `head` or `tail` node is the node to be deleted.
 - This is the most complex operation in a linked list. Drawing the operation on paper can help you visualize the problem. Don't hesitate to reach out to #basic-algorithms channel on Slack if you are stuck.
+  - You might try to use `find` to get to the node you want to delete.  This does not work.  Can you see why? 
 
 ### `deleteHead()` / `deleteTail()`
 
-- The `deleteHead/Tail` methods are utility methods for common operations.
+- The `deleteHead/Tail` methods are utility methods for common operations.  The `deleteTail()` function is slow. It needs to traverse the entire list.
 
 ## Time and Space Complexity Analysis
 
-This section will be released in the future when the Big O notation tutorials are written. Please join #basic-algorithms channel for the update notifications.
+Some of the operations on linked lists take a fixed, constant amount of instructions, no matter the length of the list.  `prepend`, `append`, `inserAfter`, and `deleteHead` obviously just touch at most two nodes.  Other functions may need to look at every node in the data structure.  `find` and `delete` needs to look at every node if they are asked to find or delete a vlaue that is not there.  The last function `deleteTail` needs to traverse the entire list, as it needs to set the tail to the second last node.  As we can only go forwards, we need to travel down the entire list.
+
+## Problems
+
+**Find a loop in a list**
+
+Given a list, we can ask whether there is a loop in it.  One obvious way to check is to remember each node that we visit in a hash table, and use this to see if there is a loop.  There is another way that only requires a constant amount of extra storage (in fact, it just needs to remember two nodes).  Floyd's cycle finding algorithm, as this is called, is not obvious, but it is a trick that many interviewers expect you to know.  The idea is simple.  You travel through the list at two speeds.  One traversal goes two steps for each step the other takes.  The fast traversal will eventually overtake the slow traversal if there is a loop. If there is no loop, the fast traversal will hit the end of the list.  
+
+
+**Reverse a list in place**
+
+A trick that people expect you to know is how to reverse a list in place.  When you traverse a list, from a given node, you can find the next node.  Once you have two nodes in a row, you can find the third node, and make the second node point to the first.  You can continue on, flipping the pointers backwards, so they point to the previous node, rather than the next.  This is unwise in any production system, especially if there is concurrency, and is very bad coding practice anywhere. Despite this, interviewers love asking about it.
+
+
+
+**Palidromes**
+
+A palidrome is a word that reads the same backwards as forwards.  "redivider" is a palidrome.  If we store each letter in a different node in a  singly linked list, the problem is, how can we tell if a list represents a palindrome.  We can reverse the list, but there are ways to do this without making a new reversed copy of the list.  First try to check for a palindrome with an extra reversed copy.  
+
+Now try to find the length of a list, then find the middle element, then reverse the second half of the list.  You now have two lists, the original first half, and the reversed second half.  If these two lists are equal, the list is a palindrome.  You should re-reverse the second half to return the list to its original form.  
