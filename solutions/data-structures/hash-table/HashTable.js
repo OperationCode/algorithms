@@ -24,6 +24,8 @@ export default class HashTable {
    * @param {string} key
    * @return {number}
    */
+    
+   
   hash(key) {
     const hash = Array.from(key).reduce(
       (hashAccumulator, keySymbol) => (hashAccumulator + keySymbol.charCodeAt(0)),
@@ -95,4 +97,23 @@ export default class HashTable {
   getKeys() {
     return Object.keys(this.keys);
   }
+
+ hash1(key){
+	// http://www.cse.yorku.ca/~oz/hash.html
+	//  This is a simple hash function that works well.
+	
+	const arr = Array.from(key);
+	const len = arr.length;
+	
+	var hash = 5381;
+	
+
+	for(var i = 0; i < len; i++){
+            hash = (33 * hash) + arr[i].charCodeAt(0); /* hash * 33 + c */
+	}
+	return hash  % this.buckets.length;
+    }
+    
+
+
 }
