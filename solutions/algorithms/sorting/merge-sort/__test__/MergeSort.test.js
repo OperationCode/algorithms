@@ -8,10 +8,10 @@ import {
 } from '../../SortTester';
 
 // Complexity constants.
-const SORTED_ARRAY_VISITING_COUNT = 79;
-const NOT_SORTED_ARRAY_VISITING_COUNT = 102;
-const REVERSE_SORTED_ARRAY_VISITING_COUNT = 87;
-const EQUAL_ARRAY_VISITING_COUNT = 79;
+const SORTED_ARRAY_VISITING_COUNT = 40;
+const NOT_SORTED_ARRAY_VISITING_COUNT = 95;
+const REVERSE_SORTED_ARRAY_VISITING_COUNT = 96;
+const EQUAL_ARRAY_VISITING_COUNT = 80;
 
 describe('MergeSort', () => {
   it('should sort array', () => {

@@ -8,10 +8,10 @@ import {
 } from '../../SortTester';
 
 // Complexity constants.
-const SORTED_ARRAY_VISITING_COUNT = 209;
-const NOT_SORTED_ARRAY_VISITING_COUNT = 209;
-const REVERSE_SORTED_ARRAY_VISITING_COUNT = 209;
-const EQUAL_ARRAY_VISITING_COUNT = 209;
+const SORTED_ARRAY_VISITING_COUNT = 190;
+const NOT_SORTED_ARRAY_VISITING_COUNT =  190;
+const REVERSE_SORTED_ARRAY_VISITING_COUNT = 190;
+const EQUAL_ARRAY_VISITING_COUNT = 190;
 
 describe('SelectionSort', () => {
   it('should sort array', () => {

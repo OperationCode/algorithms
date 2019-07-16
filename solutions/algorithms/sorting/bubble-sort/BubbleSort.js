@@ -6,17 +6,12 @@ export default class BubbleSort extends Sort {
     let swapped = false;
     // Clone original array to prevent its modification.
     const array = [...originalArray];
-
     for (let i = 1; i < array.length; i += 1) {
       swapped = false;
 
-      // Call visiting callback.
-      this.callbacks.visitingCallback(array[i]);
-
+     
       for (let j = 0; j < array.length - i; j += 1) {
-        // Call visiting callback.
-        this.callbacks.visitingCallback(array[j]);
-
+     
         // Swap elements if they are in wrong order.
         if (this.comparator.lessThan(array[j + 1], array[j])) {
           const tmp = array[j + 1];
