@@ -79,7 +79,7 @@ To start, build `DoublyLinkedListNode`. A doubly linked list node keeps a refere
 - Utilize `find` and `deleteHead/Tail` methods written above to write the method.
 
 
-#Problems
+#Problems#
 
 **Create a list from an Array**
 
@@ -87,7 +87,8 @@ Given an array, create a list with the same elements in the same order.
 
 
 
-```const arrayToList = arr => { 
+```
+const arrayToList = arr => { 
 
 }
 ```
@@ -99,7 +100,8 @@ Given a list of numbers, find the smallest value.  This just requires traversing
 
 
 
-```const smallestValue = dll => { 
+```
+const smallestValue = dll => { 
 
 }
 
@@ -115,7 +117,8 @@ console.log( smallestValue( [13, 7, 6, 12 ].arrayToList() ) ) ==  6 );
 Sadly, just switching head and tail will not reverse a list, as the next and previous pointers will still be messed up.  To revere a list it is necessary to go through each element and to swap the next and previous values in the right way.  We can either create a new doubly linked list that is the reverse of this one, or we can modify the existing list.  Try to do both.
 
 
-```const reverseDLL = dll => { 
+```
+const reverseDLL = dll => { 
 
 }
 
@@ -130,7 +133,8 @@ console.log( reverseInPlace( [13, 7, 6, 12 ].arrayToList() ) ) ==  [12, 6, 7, 13
 
 Given two sorted lists, merge the two lists to make a larger sorted list.  Your function should take a comparator, a function that compares two elements.  This function, mergring two sorted lists, is the basis for merge sort, one of the very first sorting algorithms. 
 
-```const merge  = ( dll1, dll2, comp)  => { 
+```
+const merge  = ( dll1, dll2, comp)  => { 
 
 }
 
@@ -141,10 +145,11 @@ console.log( merge( [7, 13].arrayToList(),   merge( [ 6, 12 ].arrayToList(),  (a
 
 **Insert a Value in a Sorted List**
 
-Gien a list and an element, insert the element in sorted order.   This function is the basis for insertion sort, the best sorting agorithm for very small arrays.  
+Given a list and an element, insert the element in sorted order.   This function is the basis for insertion sort, the best sorting agorithm for very small arrays.  
 
 
-```const insert  = ( dll, el, comp)  => { 
+```
+const insert  = ( dll, el, comp)  => { 
 
 }
 

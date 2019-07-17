@@ -68,7 +68,8 @@ peek, pop, and isEmpty are easy.  The trick is to find a way to implement push s
 
 
 
-```import Queue from "./Queue";
+```
+import Queue from "./Queue";
 import Stack from "../stack/Stack";
 
 export default class StackQ {

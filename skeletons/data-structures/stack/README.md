@@ -58,9 +58,11 @@ Write an algorithm to evaluate postfix.
 
 Postfix is a way of representing algebraic expressions without needing brackets, and it is faster to evaluate than regulat infix expressions.  Where we normally would write '1 + 2' in infix, or normal mathematical notation, in postfix we write '1 2 +'.  The operations =,*,-, and / take the previous two arguments.  The natural way of evaluating postifx is to push each number on a stack.  When you get to an operation, you pop the two numbers needed off the stack, and push the result back on.  When the expression is finished, there should be exactly one number on the stack. If we ever have too few arguments on the stack, or too mant arguments at the end, we return null; 
 
-```const evalPostFix = arr => { 
+```
+const evalPostFix = arr => { 
 
 }
+
 
 console.log( evalPostFix( [ 1, 2,'+'] ) ) === 3);
 console.log(  evalPostFix( [ 1, 2, 3,'+','+'] ) == 6);
@@ -81,7 +83,8 @@ Many interviewers like to ask questions about stock prices.  The simplest way to
 It is not immediately clear from the solution that the algorithm is linear, as there are nested loops.  How do we know that the algorithm is linear?  The outside loop goes through the array once, while the inside loop pops items off the stack.  We only push n items onto the stack, so we can at most pop n items off the stack.  This when we add up the amount of work all the inner loops do, the total is n pops or less.  The usual sign of an n^2 algorithm is nested loops, but in cases like this, where the inner loop pops a stack, or other data structure, we can prove that the inner loop only does a linear amount of work.  
 
 
-```const stockSpan = arr => { 
+```
+const stockSpan = arr => { 
 
 }
 
@@ -99,7 +102,8 @@ Given an array of numbers, for each number, find the next greater element (NGE),
 Using a stack, in a similar way to the previous problem, we can solve this in linear time.  
 
 
-```const nextGreatestElement = arr => { 
+```
+const nextGreatestElement = arr => { 
 
 }
 
