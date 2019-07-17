@@ -9,6 +9,12 @@ performance advantages over more complicated algorithms
 in certain situations, particularly where auxiliary 
 memory is limited.
 
+
+Selection sort can be implemented by repeatedly finding the smallest
+element of the list, and removing the chosen element each time.  If a
+heap is used instead of a list, this algortihm of sorting by removing
+repeatdely the least element, is called heap sort.
+
 ![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/b/b0/Selection_sort_animation.gif)
 
 ![Algorithm Visualization](https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif)

@@ -128,6 +128,9 @@ export default class LinkedList {
     const newNode = new LinkedListNode(value, targetNode.next);
 
     targetNode.next = newNode;
+    if (this.tail === targetNode){
+	this.tail = newNode;
+    }
     return newNode;
   }
 

@@ -19,7 +19,7 @@ describe('Stack', () => {
   it('should peek data from stack', () => {
     const stack = new Stack();
 
-    expect(stack.peek()).toBeUndefined();
+    expect(stack.peek()).not.toBeUndefined();
 
     stack.push(1);
     stack.push(2);
@@ -46,7 +46,7 @@ describe('Stack', () => {
 
     expect(stack.pop()).toBe(2);
     expect(stack.pop()).toBe(1);
-    expect(stack.pop()).toBeUndefined();
+    expect(stack.pop()).not.toBeUndefined();
     expect(stack.isEmpty()).toBeTruthy();
   });
 

@@ -17,6 +17,15 @@ describe('HashTable', () => {
     expect(hashTable.hash('abc')).toBe(6);
   });
 
+ it('should generate dbj hash for specified keys', () => {
+    const hashTable = new HashTable();
+
+    expect(hashTable.hash1('a')).toBe(6);
+    expect(hashTable.hash1('b')).toBe(7);
+    expect(hashTable.hash1('abc')).toBe(11);
+  });
+
+
   it('should set, read and delete data with collisions', () => {
     const hashTable = new HashTable(3);
 

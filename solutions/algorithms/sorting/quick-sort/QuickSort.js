@@ -24,14 +24,15 @@ export default class QuickSort extends Sort {
 
     // Split all array elements between left, center and right arrays.
     while (array.length) {
-      const currentElement = array.shift();
+	const currentElement = array.shift();
 
-      // Call visiting callback.
-      this.callbacks.visitingCallback(currentElement);
+	var comp_val = this.comparator.compare(currentElement, pivotElement);
+	
+	// we record the result of the comparison so that we do not copute it twice.
 
-      if (this.comparator.equal(currentElement, pivotElement)) {
+      if (comp_val === 0 ) {
         centerArray.push(currentElement);
-      } else if (this.comparator.lessThan(currentElement, pivotElement)) {
+      } else if (comp_val <  0 ) {
         leftArray.push(currentElement);
       } else {
         rightArray.push(currentElement);

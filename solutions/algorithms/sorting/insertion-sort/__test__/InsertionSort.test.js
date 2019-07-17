@@ -8,10 +8,10 @@ import {
 } from '../../SortTester';
 
 // Complexity constants.
-const SORTED_ARRAY_VISITING_COUNT = 20;
-const NOT_SORTED_ARRAY_VISITING_COUNT = 101;
-const REVERSE_SORTED_ARRAY_VISITING_COUNT = 210;
-const EQUAL_ARRAY_VISITING_COUNT = 20;
+const SORTED_ARRAY_VISITING_COUNT = 19;
+const NOT_SORTED_ARRAY_VISITING_COUNT = 97;
+const REVERSE_SORTED_ARRAY_VISITING_COUNT = 190;
+const EQUAL_ARRAY_VISITING_COUNT = 19;
 
 describe('InsertionSort', () => {
   it('should sort array', () => {

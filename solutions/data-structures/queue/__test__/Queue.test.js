@@ -13,7 +13,7 @@ describe('Queue', () => {
     queue.enqueue(1);
     queue.enqueue(2);
 
-    expect(queue.toString()).toBe('1,2');
+    expect(queue.toString()).toBe('2,1');
   });
 
   it('should be possible to enqueue/dequeue in order', () => {

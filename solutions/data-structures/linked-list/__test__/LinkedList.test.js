@@ -139,6 +139,13 @@ describe('LinkedList', () => {
       .insertAfter(2, 1);
 
     expect(linkedList.toString()).toBe('1,2,3');
+    const linkedList1 = new LinkedList();
+    linkedList1
+      .append(1)
+      .append(2)
+      .insertAfter(3, 2);
+
+    expect(linkedList1.tail.toString()).toBe('3');
   });
 
   it('should delete linked list tail', () => {
