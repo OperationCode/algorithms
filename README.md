@@ -22,8 +22,10 @@ The problem sets below contain information on key data structures, sorting/searc
   - [Stack](solutions/data-structures/stack)
   - [Linked List](solutions/data-structures/linked-list)
   - [Doubly Linked List](solutions/data-structures/doubly-linked-list)
+  - [Heap](solutions/data-structures/heap)
+  - [Binary Tree](solutions/data-structures/binary-tree)
   - [Hash Table](solutions/data-structures/hash-table)
-  - [Binary Search Tree](solutions/data-structures/tree/binary-search-tree)
+  - [Binary Search Tree](solutions/data-structures/binary-search-tree)
 - **Sorting**
   - [Bubble Sort](solutions/algorithms/sorting/bubble-sort)
   - [Selection Sort](solutions/algorithms/sorting/selection-sort)
@@ -39,6 +41,9 @@ The problem sets below contain information on key data structures, sorting/searc
   - [Factorial](solutions/algorithms/numbers/factorial)
   - [Fibonacci Number](solutions/algorithms/numbers/fibonacci)
   - [Prime Number](solutions/algorithms/numbers/prime)
+  - [Happy Number](solutions/algorithms/numbers/happy)
+  - [Ugly Number](solutions/algorithms/numbers/ugly)
+  - [Lexicographical Numbers](solutions/algorithms/numbers/lexicographical)
 
 ## How it works
 
