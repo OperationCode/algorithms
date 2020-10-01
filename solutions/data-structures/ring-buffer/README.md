@@ -26,13 +26,13 @@ In this exercise, implement the following functions for the `RingBuffer` class
 
 **Moving Average**
 
-Write an algorithm to calculate the moving average of a list of data with a window size of 3 elements.
+Write an algorithm to calculate the moving average of a list of data with a window size of 4 elements.
 
 ```
-const bracketMatch = stream => {
+const movingAverage = stream => {
 
 }
 
-console.log(bracketMatch('{ac[bb]}') === true);
+console.log(movingAverage([2,2,3,4,3,3,5]) === [ 2.75, 3.0, 3.25, 3.75 ]);
 ```
 
