@@ -15,8 +15,6 @@ A Ring Buffer is implemented essentially in two operations: `push` and `getBuffe
 
 In this exercise, implement the following functions for the `RingBuffer` class
 
-- `isEmpty()`
-  - Write a method that returns `true` if the RingBuffer is currently empty.
 - `push(el)`
   - Write a method that stores an element(`el`) into the RingBuffer.
 - `getBuffer()`
