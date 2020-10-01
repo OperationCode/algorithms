@@ -1,23 +1,18 @@
 export default class RingBuffer {
-  constructor() {
-    this.buffer = new Array(size);
+  constructor(size = 10) {
     this.index = 0;
     this.size = size;
-  }
-
-  isEmpty() {
-    return !this.buffer.length;
+    this.buffer = new Array(this.size);
   }
 
   push(el) {
-    this.buffer.push(el);
-    if (index++ >= size)
-      index = 0;
+    this.buffer[this.index] = el;
+    if (this.index++ >= this.size)  this.index = 0;
   }
 
   getBuffer() {
-    buffer = [];
-    for (let i = index; i < this.size; i++)
+    let buffer = [];
+    for (let i = this.index; i < this.size; i++)
       buffer.push(this.buffer[i]);
     for (let i = 0; i < this.index; i++)
       buffer.push(this.buffer[i]);
@@ -25,6 +20,6 @@ export default class RingBuffer {
   }
 
   toString() {
-    return this.buffer.toString();
+    return this.buffer.toString().replace(/,,/g,"");
   }
 }
