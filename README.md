@@ -66,6 +66,7 @@ Recommended track for beginners who can devote 2-4 hours a day.
 * Day 6
   - Quicksort (4 Hours)
 * Day 6
+  - Ring Buffer (2 Hours)
   - Binary Search  (2 Hours)
 * Day 7
   - Depth-First Search (2 Hour)
@@ -102,7 +103,8 @@ Recommended for someone who is comfortable coding and can devote ~6 hours a day.
   - Fibonacci Number (1 Hour)
   - Prime Number (1 Hour)
 * Day 4
-  - Binary Search Tree (6 Hours)
+  - Binary Search Tree (3 Hours)
+  - Ring Buffer (1 Hour)
 
 ### Folders
 
