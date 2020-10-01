@@ -23,7 +23,8 @@ The problem sets below contain information on key data structures, sorting/searc
   - [Linked List](solutions/data-structures/linked-list)
   - [Doubly Linked List](solutions/data-structures/doubly-linked-list)
   - [Hash Table](solutions/data-structures/hash-table)
-  - [Binary Search Tree](solutions/data-structures/tree/binary-search-tree)
+  - [Binary Search Tree](solutions/data-structures/binary-search-tree)
+  - [Ring Buffer](solutions/data-structures/ring-buffer)
 - **Sorting**
   - [Bubble Sort](solutions/algorithms/sorting/bubble-sort)
   - [Selection Sort](solutions/algorithms/sorting/selection-sort)
