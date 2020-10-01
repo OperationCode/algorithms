@@ -23,7 +23,8 @@ The problem sets below contain information on key data structures, sorting/searc
   - [Linked List](solutions/data-structures/linked-list)
   - [Doubly Linked List](solutions/data-structures/doubly-linked-list)
   - [Hash Table](solutions/data-structures/hash-table)
-  - [Binary Search Tree](solutions/data-structures/tree/binary-search-tree)
+  - [Binary Search Tree](solutions/data-structures/binary-search-tree)
+  - [Ring Buffer](solutions/data-structures/ring-buffer)
 - **Sorting**
   - [Bubble Sort](solutions/algorithms/sorting/bubble-sort)
   - [Selection Sort](solutions/algorithms/sorting/selection-sort)
@@ -65,6 +66,7 @@ Recommended track for beginners who can devote 2-4 hours a day.
 * Day 6
   - Quicksort (4 Hours)
 * Day 6
+  - Ring Buffer (2 Hours)
   - Binary Search  (2 Hours)
 * Day 7
   - Depth-First Search (2 Hour)
@@ -101,7 +103,8 @@ Recommended for someone who is comfortable coding and can devote ~6 hours a day.
   - Fibonacci Number (1 Hour)
   - Prime Number (1 Hour)
 * Day 4
-  - Binary Search Tree (6 Hours)
+  - Binary Search Tree (3 Hours)
+  - Ring Buffer (1 Hour)
 
 ### Folders
 
